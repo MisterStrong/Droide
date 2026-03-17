@@ -1,0 +1,531 @@
+/* ================================================
+   PALETTE OFFICIELLE – Cahier des normes CSS
+   #00205f  bleu marine
+   #0079b8  bleu moyen
+   #01adf0  bleu ciel
+   #e23a40  rouge
+   #5b5d5f  gris foncé
+   #6d6d6f  gris moyen
+   Typographie : Ebrima (recommandée officiellement)
+================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Ebrima&display=swap');
+
+:root {
+  --navy:  #00205f;
+  --blue:  #0079b8;
+  --sky:   #01adf0;
+  --red:   #e23a40;
+  --grey:  #5b5d5f;
+  --grey2: #6d6d6f;
+  --white: #ffffff;
+  --light: #f2f6fb;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Ebrima', 'Segoe UI', sans-serif;
+  background: var(--white);
+  color: var(--navy);
+  overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 68px;
+  border-bottom: 4px solid var(--sky);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.nav-brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--sky);
+}
+.nav-brand-name {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background 0.18s, color 0.18s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--sky);
+  color: var(--white);
+}
+
+.nav-css-logo {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255,255,255,0.2);
+}
+.nav-css-logo img {
+  height: 36px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.75;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 68px);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 48%;
+  width: 120px;
+  background: var(--navy);
+  transform: skewX(-4deg);
+  z-index: 2;
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  display: block;
+}
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 40%, var(--navy) 100%),
+              linear-gradient(to bottom, rgba(0,32,95,0.3), transparent);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 56px 64px 32px;
+  gap: 28px;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow-line {
+  width: 36px;
+  height: 3px;
+  background: var(--sky);
+  flex-shrink: 0;
+}
+.hero-eyebrow span {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--sky);
+}
+
+.hero-title {
+  font-family: 'Ebrima', sans-serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+.hero-title .accent { color: var(--sky); }
+.hero-title .accent-red { color: var(--red); }
+
+.hero-desc {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75;
+  max-width: 440px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: var(--sky);
+  color: var(--white);
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--blue); transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border: 2px solid rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--sky); color: var(--sky); }
+
+.hero-badge {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0,32,95,0.75);
+  border: 1px solid rgba(1,173,240,0.4);
+  padding: 10px 18px;
+  backdrop-filter: blur(8px);
+}
+.hero-badge img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.hero-badge span {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ── STATS ── */
+.stats {
+  background: var(--sky);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat {
+  padding: 28px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.3);
+}
+.stat:last-child { border-right: none; }
+.stat-n {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.stat-l {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+
+/* ── SECTIONS ── */
+.section { padding: 80px 48px; }
+.section-inner { max-width: 1160px; margin: 0 auto; }
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.section-label-line {
+  width: 28px;
+  height: 3px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.section-label span {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.section-title {
+  font-family: 'Ebrima', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  line-height: 1.15;
+}
+.section-title span { color: var(--sky); }
+
+/* ── ABOUT CARDS ── */
+.cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.about-card {
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.about-card:nth-child(1) { background: var(--navy); color: var(--white); }
+.about-card:nth-child(2) { background: var(--blue); color: var(--white); }
+.about-card:nth-child(3) { background: var(--sky);  color: var(--white); }
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  bottom: -20px; right: -20px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+}
+
+.card-num {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.about-card h3 {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.about-card p {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  opacity: 0.88;
+}
+
+/* ── SECTION DARK ── */
+.section-dark {
+  background: var(--navy);
+  padding: 80px 48px;
+}
+.section-dark .section-title { color: var(--white); }
+.section-dark .section-title span { color: var(--sky); }
+.section-dark .section-label span { color: var(--sky); }
+.section-dark .section-label-line { background: var(--sky); }
+
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.nav-card {
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 32px 28px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+.nav-card:hover {
+  border-color: var(--sky);
+  background: rgba(1,173,240,0.07);
+}
+.nav-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.nav-card:nth-child(1)::before { background: var(--sky); }
+.nav-card:nth-child(2)::before { background: var(--red); }
+.nav-card:nth-child(3)::before { background: var(--blue); }
+
+.nav-card-tag {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 12px;
+}
+.nav-card h3 {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.nav-card p {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.nav-card-arrow {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 1.1rem;
+  color: var(--sky);
+  font-weight: 700;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #0b0f1a;
+  padding: 52px 48px 0;
+}
+.footer-grid {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand { display: flex; flex-direction: column; gap: 16px; }
+.footer-brand-top { display: flex; align-items: center; gap: 14px; }
+.footer-brand img {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--sky);
+}
+.footer-brand-name {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--white);
+  letter-spacing: 4px; text-transform: uppercase;
+}
+.footer-brand-sub {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 2px;
+}
+.footer-brand-desc {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  max-width: 320px;
+}
+.footer-col h4 {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 16px;
+}
+.footer-col a {
+  display: block;
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.18s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-css-logo {
+  display: block;
+  height: 38px; width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
+  margin-top: 12px;
+}
+.footer-bottom {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom p {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+}
+.footer-bottom .sky { color: var(--sky); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-visual { height: 300px; }
+  .hero::after { display: none; }
+  .hero-text { padding: 48px 28px; }
+  .cards-3, .nav-cards { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .navbar { padding: 0 24px; }
+  .section, .section-dark { padding: 56px 24px; }
+}
