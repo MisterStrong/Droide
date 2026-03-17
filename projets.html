@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets – Droïde</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/image/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projets.html" class="active">Projets</a></li>
+      <li><a href="competitions.html">Compétitions</a></li>
+      <li><a href="realisations.html">Réalisations</a></li>
+    </ul>
+    <div class="nav-css-logo">
+      <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" />
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="ph-inner">
+      <div class="ph-text">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span>Sec 1 → Sec 5</span>
+        </div>
+        <h1 class="ph-title">Nos <span>Projets</span></h1>
+        <p class="ph-desc">Du Sec 1 au Sec 5, chaque niveau travaille sur des projets adaptés à ses compétences. Une progression qui mène jusqu'aux compétitions provinciales.</p>
+      </div>
+      <div class="ph-img-wrap">
+        <img src="assets/image/image/planif.jpeg" alt="Élève en atelier robotique" class="ph-img" />
+        <div class="ph-img-caption">Atelier robotique — Collège Saint-Sacrement</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <div class="tabs-bar">
+    <button class="tab-btn active" onclick="showLevel(this,'sec1')">Sec 1</button>
+    <button class="tab-btn" onclick="showLevel(this,'sec2')">Sec 2</button>
+    <button class="tab-btn" onclick="showLevel(this,'sec3')">Sec 3</button>
+    <button class="tab-btn" onclick="showLevel(this,'sec4')">Sec 4</button>
+    <button class="tab-btn" onclick="showLevel(this,'sec5')">Sec 5</button>
+  </div>
+
+  <!-- ── SEC 1 ── -->
+  <section class="level-section active" id="level-sec1">
+    <div class="level-inner">
+      <div class="level-header">
+        <span class="level-badge badge-1">Secondaire 1</span>
+        <h2>Initiation à la mécanique et à la programmation</h2>
+        <p>Le cours de robotique de première secondaire se veut être une initiation au monde de la mécanique et de la programmation. L'accent est mis sur la conception, la fabrication et la programmation de robots Lego, au travers de différents projets.</p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card proj-card--img">
+          <img src="assets/image/image/planif.jpeg" alt="Atelier Sec 1" class="proj-card-img" />
+          <div class="proj-card-body">
+            <h3>Robots Lego</h3>
+            <p>Combat de sumo robot, exposition AnimalRobot et compétition de robotique Zone01. Construction, conception et programmation de A à Z.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Lego</span>
+              <span class="proj-tag">Zone01</span>
+              <span class="proj-tag">Mécanique</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-icon">🎮</div>
+          <div class="proj-card-body">
+            <h3>Programmation par blocs</h3>
+            <p>Apprentissage de la programmation par blocs et développement de la pensée algorithmique via MakeCode Arcade et Scratch.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Scratch</span>
+              <span class="proj-tag">MakeCode</span>
+              <span class="proj-tag">Algorithmique</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card proj-card--img">
+          <img src="assets/image/image/circuit.png" alt="Atelier Sec 1" class="proj-card-img" />
+          <div class="proj-card-body">
+            <h3>Circuits électriques</h3>
+            <p>Un projet créatif à mi-chemin entre l'art et la technologie pour découvrir le monde des circuits électriques — introduction aux concepts de Sec 2.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Lego</span>
+              <span class="proj-tag">Zone01</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SEC 2 ── -->
+  <section class="level-section" id="level-sec2">
+    <div class="level-inner">
+      <div class="level-header">
+        <span class="level-badge badge-2">Secondaire 2</span>
+        <h2>Touche-à-tout et curiosité technologique</h2>
+        <p>Dans la continuité de la Sec 1, le cours de deuxième secondaire vise à développer la curiosité technologique des élèves et leur capacité à mener à bien un projet complexe.</p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card proj-card--img">
+          <img src="assets/image/image/planif.jpeg" alt="Atelier Sec 2" class="proj-card-img" />
+          <div class="proj-card-body">
+            <h3>Station météo connectée</h3>
+            <p>Découverte de l'univers des objets connectés au travers de la construction d'une station météo fonctionnelle.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">IoT</span>
+              <span class="proj-tag">Capteurs</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-icon">🎵</div>
+          <div class="proj-card-body">
+            <h3>Électronique & domotique</h3>
+            <p>Construction d'un instrument de musique électronique et d'une maquette de maison intelligente et interactive.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Arduino</span>
+              <span class="proj-tag">Domotique</span>
+            </div>
+          </div>
+        </div>
+       <div class="proj-card proj-card--img">
+          <img src="assets/image/image/cavern.png" alt="Jeu vidéo 2D" class="proj-card-img" />
+          <div class="proj-card-body">
+            <h3>Jeu vidéo 2D</h3>
+            <p>Initiation à la programmation textuelle grâce à la conception d'un petit jeu vidéo 2D dans le style des jeux d'aventure des années 90.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">Jeu vidéo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SEC 3 ── -->
+  <section class="level-section" id="level-sec3">
+    <div class="level-inner">
+      <div class="level-header">
+        <span class="level-badge badge-3">Secondaire 3</span>
+        <h2>Compétition VEX & programmation avancée</h2>
+        <p>En troisième secondaire, les élèves participent à la compétition VEX et développent leurs compétences en programmation textuelle et en électronique programmable.</p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card proj-card--img">
+          <img src="assets/image/image/realisations.jpg" alt="Compétition VEX Sec 3" class="proj-card-img" />
+          <div class="proj-card-body">
+            <h3>Robot VEX de compétition</h3>
+            <p>Construction et programmation d'un robot de métal capable de relever les défis de la compétition VEX de l'année.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">VEX</span>
+              <span class="proj-tag">C++</span>
+              <span class="proj-tag">Compétition</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-icon">🎈</div>
+          <div class="proj-card-body">
+            <h3>Ballon stratosphérique</h3>
+            <p>Planification, conception et lancement d'un ballon stratosphérique équipé d'une caméra, de capteurs de pression, d'humidité et d'un émetteur radio-GPS.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Raspberry Pi</span>
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">GPS</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-icon">🎮</div>
+          <div class="proj-card-body">
+            <h3>Console de jeu vidéo</h3>
+            <p>Conception et programmation d'une console de jeu vidéo maison — électronique, programmation et design.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Arduino</span>
+              <span class="proj-tag">C</span>
+              <span class="proj-tag">Électronique</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-icon">🖨️</div>
+          <div class="proj-card-body">
+            <h3>Fabrication numérique</h3>
+            <p>Production de fichiers pour machines à commandes numériques : impression 3D, découpe laser, drones et automatisation.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">3D</span>
+              <span class="proj-tag">Laser</span>
+              <span class="proj-tag">Drone</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SEC 4 ── -->
+  <section class="level-section" id="level-sec4">
+    <div class="level-inner">
+      <div class="level-header">
+        <span class="level-badge badge-4">Secondaire 4</span>
+        <h2>Accessibilité, aide aux personnes & arts numériques</h2>
+        <p>Le cours de Sec 4 met l'accent sur l'accessibilité, l'aide aux personnes handicapées et les arts visuels et interactifs. Cette année, le cours est évalué.</p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <div class="proj-card-icon">🌐</div>
+          <div class="proj-card-body">
+            <h3>Site web portfolio</h3>
+            <p>Consolidation des apprentissages de Sec 3 en HTML, CSS et C, via la création d'un site web servant de portfolio et de bilan des apprentissages.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">HTML</span>
+              <span class="proj-tag">CSS</span>
+              <span class="proj-tag">Portfolio</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card proj-card--img">
+          <img src="assets/image/image/realisations.jpg" alt="Projet aide Sec 4" class="proj-card-img" />
+          <div class="proj-card-body">
+            <h3>Objet d'aide aux personnes</h3>
+            <p>Conception et construction d'un objet d'aide pour des personnes atteintes de cécité ou de surdité — intégration de la 3D, la programmation et l'électronique.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Accessibilité</span>
+              <span class="proj-tag">Impression 3D</span>
+              <span class="proj-tag">Arduino</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-icon">🎨</div>
+          <div class="proj-card-body">
+            <h3>Arts numériques interactifs</h3>
+            <p>Création d'une installation visuelle immersive en JavaScript — où l'art rencontre la technologie.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">Arts numériques</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SEC 5 ── -->
+  <section class="level-section" id="level-sec5">
+    <div class="level-inner">
+      <div class="level-header">
+        <span class="level-badge badge-5">Secondaire 5</span>
+        <h2>Ingénierie, gestion de projet & innovation</h2>
+        <p>Le cours de Sec 5 est avant tout centré sur le développement de compétences en ingénierie : cahier des charges, gestion de projet, résolution de problème et innovations technologiques.</p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <div class="proj-card-icon">🕹️</div>
+          <div class="proj-card-body">
+            <h3>PinBall</h3>
+            <p>Projet guidé de conception et fabrication d'un PinBall pour initier les élèves aux compétences d'ingénierie : cahier des charges, gestion du temps et résolution de problèmes.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Ingénierie</span>
+              <span class="proj-tag">Fabrication</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card proj-card--img">
+          <img src="assets/image/image/planif.jpeg" alt="Projet intégrateur Sec 5" class="proj-card-img" />
+          <div class="proj-card-body">
+            <h3>Projet intégrateur libre</h3>
+            <p>Un vaste projet libre pour mettre en pratique toutes les compétences acquises — programmation, électronique, impression 3D et découpe laser.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Autonomie</span>
+              <span class="proj-tag">Innovation</span>
+              <span class="proj-tag">Intégrateur</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-icon">🔬</div>
+          <div class="proj-card-body">
+            <h3>Objets connectés</h3>
+            <p>Conception et construction d'objets intelligents capables de se connecter et d'échanger des données — Voiture autonome, serre connectée</p>
+            <div class="proj-tags">
+              <span class="proj-tag">3D</span>
+              <span class="proj-tag">Électronique</span>
+              <span class="proj-tag">Wifi</span>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-card-icon">🔬</div>
+          <div class="proj-card-body">
+            <h3>Instruments de mesure</h3>
+            <p>Conception d'instruments électroniques précis pour mesurer des grandeurs physiques — pesanteur (g), vitesse du son avec.</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Physique</span>
+              <span class="proj-tag">Électronique</span>
+              <span class="proj-tag">Mesure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/image/logo/droideBlanc.jpg" alt="Droïde" class="footer-droide-logo" />
+        <p class="footer-brand-desc">Un programme du Collège Saint-Sacrement dédié à la robotique et à la programmation, pour les élèves de la Sec&nbsp;1 à la Sec&nbsp;5.</p>
+        <div class="footer-css-wrap">
+          <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" />
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="competitions.html">Compétitions</a>
+        <a href="realisations.html">Réalisations</a>
+      </div>
+      <div class="footer-col">
+        <h4>Niveaux</h4>
+        <a href="#" onclick="showLevel(document.querySelectorAll('.tab-btn')[0],'sec1');return false;">Secondaire 1</a>
+        <a href="#" onclick="showLevel(document.querySelectorAll('.tab-btn')[1],'sec2');return false;">Secondaire 2</a>
+        <a href="#" onclick="showLevel(document.querySelectorAll('.tab-btn')[2],'sec3');return false;">Secondaire 3</a>
+        <a href="#" onclick="showLevel(document.querySelectorAll('.tab-btn')[3],'sec4');return false;">Secondaire 4</a>
+        <a href="#" onclick="showLevel(document.querySelectorAll('.tab-btn')[4],'sec5');return false;">Secondaire 5</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Droïde – Collège Saint-Sacrement · <span class="sky">droide.ca</span></p>
+      <p>Version bêta · Terrebonne, Québec</p>
+    </div>
+  </footer>
+
+  <script>
+    function showLevel(btn, id) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.level-section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('level-' + id).classList.add('active');
+      document.querySelector('.tabs-bar').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+
+</body>
+</html>

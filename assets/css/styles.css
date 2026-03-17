@@ -42,30 +42,21 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
-  height: 68px;
+  height: 72px;
   border-bottom: 4px solid var(--sky);
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 14px;
   text-decoration: none;
 }
-.nav-brand img {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--sky);
-}
-.nav-brand-name {
-  font-family: 'Ebrima', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 4px;
-  text-transform: uppercase;
+
+/* Logo Droïde — fond blanc inversé en blanc sur fond marine */
+.nav-droide-logo {
+  height: 44px;
+  width: auto;
+  filter: invert(1);
 }
 
 .nav-links {
@@ -92,16 +83,22 @@ body {
   color: var(--white);
 }
 
+/* Logo CSS navbar
+   Normes : taille min 1 po (≈96px)
+   Zone de dégagement = padding autour de l'image */
 .nav-css-logo {
-  margin-left: 20px;
-  padding-left: 20px;
+  margin-left: 16px;
+  padding-left: 16px;
   border-left: 1px solid rgba(255,255,255,0.2);
 }
 .nav-css-logo img {
+  display: block;
   height: 36px;
   width: auto;
   filter: brightness(0) invert(1);
-  opacity: 0.75;
+  opacity: 0.85;
+  padding: 0 12px;
+  box-sizing: content-box;
 }
 
 /* ── HERO ── */
@@ -111,9 +108,8 @@ body {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 68px);
+  min-height: calc(100vh - 72px);
 }
-
 .hero::after {
   content: '';
   position: absolute;
@@ -124,7 +120,6 @@ body {
   transform: skewX(-4deg);
   z-index: 2;
 }
-
 .hero-visual {
   position: relative;
   z-index: 1;
@@ -134,7 +129,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85;
+  object-position: center top;
+  opacity: 0.9;
   display: block;
 }
 .hero-visual::after {
@@ -142,9 +138,8 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, transparent 40%, var(--navy) 100%),
-              linear-gradient(to bottom, rgba(0,32,95,0.3), transparent);
+              linear-gradient(to bottom, rgba(0,32,95,0.2), transparent);
 }
-
 .hero-text {
   position: relative;
   z-index: 3;
@@ -154,7 +149,6 @@ body {
   padding: 64px 56px 64px 32px;
   gap: 28px;
 }
-
 .hero-eyebrow {
   display: flex;
   align-items: center;
@@ -174,7 +168,6 @@ body {
   text-transform: uppercase;
   color: var(--sky);
 }
-
 .hero-title {
   font-family: 'Ebrima', sans-serif;
   font-size: clamp(2.4rem, 4.5vw, 4rem);
@@ -183,9 +176,8 @@ body {
   line-height: 1.08;
   text-transform: uppercase;
 }
-.hero-title .accent { color: var(--sky); }
+.hero-title .accent     { color: var(--sky); }
 .hero-title .accent-red { color: var(--red); }
-
 .hero-desc {
   font-family: 'Ebrima', sans-serif;
   font-size: 1.05rem;
@@ -193,12 +185,8 @@ body {
   line-height: 1.75;
   max-width: 440px;
 }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
-.hero-cta {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
 .btn-primary {
   background: var(--sky);
   color: var(--white);
@@ -236,17 +224,16 @@ body {
   z-index: 4;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: rgba(0,32,95,0.75);
   border: 1px solid rgba(1,173,240,0.4);
   padding: 10px 18px;
   backdrop-filter: blur(8px);
 }
-.hero-badge img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
+.badge-droide-logo {
+  height: 26px;
+  width: auto;
+  filter: invert(1);
 }
 .hero-badge span {
   font-family: 'Ebrima', sans-serif;
@@ -310,7 +297,6 @@ body {
   text-transform: uppercase;
   color: var(--red);
 }
-
 .section-title {
   font-family: 'Ebrima', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
@@ -336,7 +322,6 @@ body {
 .about-card:nth-child(1) { background: var(--navy); color: var(--white); }
 .about-card:nth-child(2) { background: var(--blue); color: var(--white); }
 .about-card:nth-child(3) { background: var(--sky);  color: var(--white); }
-
 .about-card::before {
   content: '';
   position: absolute;
@@ -345,7 +330,6 @@ body {
   border-radius: 50%;
   background: rgba(255,255,255,0.07);
 }
-
 .card-num {
   font-family: 'Ebrima', sans-serif;
   font-size: 3.5rem;
@@ -404,7 +388,6 @@ body {
 .nav-card:nth-child(1)::before { background: var(--sky); }
 .nav-card:nth-child(2)::before { background: var(--red); }
 .nav-card:nth-child(3)::before { background: var(--blue); }
-
 .nav-card-tag {
   font-family: 'Ebrima', sans-serif;
   font-size: 0.7rem;
@@ -452,24 +435,15 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .footer-brand { display: flex; flex-direction: column; gap: 16px; }
-.footer-brand-top { display: flex; align-items: center; gap: 14px; }
-.footer-brand img {
-  width: 50px; height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--sky);
-}
-.footer-brand-name {
-  font-family: 'Ebrima', sans-serif;
-  font-size: 1.1rem; font-weight: 700;
-  color: var(--white);
-  letter-spacing: 4px; text-transform: uppercase;
-}
-.footer-brand-sub {
-  font-family: 'Ebrima', sans-serif;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
-  margin-top: 2px;
+
+/* Logo Droïde footer — fond blanc inversé */
+.footer-droide-logo {
+  height: 50px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  filter: invert(1);
+  opacity: 0.85;
 }
 .footer-brand-desc {
   font-family: 'Ebrima', sans-serif;
@@ -478,10 +452,26 @@ body {
   line-height: 1.7;
   max-width: 320px;
 }
+
+/* Logo CSS footer
+   Normes : taille min 1 po (≈96px), zone de dégagement via padding */
+.footer-css-wrap { margin-top: 8px; }
+.footer-css-logo {
+  display: block;
+  width: 180px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  padding: 10px 14px;
+  box-sizing: content-box;
+}
+
 .footer-col h4 {
   font-family: 'Ebrima', sans-serif;
-  font-size: 0.72rem; font-weight: 700;
-  letter-spacing: 3px; text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   color: var(--sky);
   margin-bottom: 16px;
 }
@@ -495,13 +485,7 @@ body {
   transition: color 0.18s;
 }
 .footer-col a:hover { color: var(--white); }
-.footer-css-logo {
-  display: block;
-  height: 38px; width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.5;
-  margin-top: 12px;
-}
+
 .footer-bottom {
   max-width: 1160px;
   margin: 0 auto;
@@ -524,8 +508,238 @@ body {
   .hero::after { display: none; }
   .hero-text { padding: 48px 28px; }
   .cards-3, .nav-cards { grid-template-columns: 1fr; }
-  .stats { grid-template-columns: repeat(2,1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
   .navbar { padding: 0 24px; }
   .section, .section-dark { padding: 56px 24px; }
+}
+/* ── PAGE HERO PROJETS ── */
+.page-hero {
+  background: var(--navy);
+  border-bottom: 4px solid var(--sky);
+}
+.ph-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+}
+.ph-text {
+  padding: 64px 48px 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.ph-text .section-label-line { background: var(--sky); }
+.ph-text .section-label span { color: var(--sky); }
+.ph-title {
+  font-family: 'Ebrima', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 1.08;
+}
+.ph-title span { color: var(--sky); }
+.ph-desc {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.75;
+  max-width: 440px;
+}
+.ph-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.ph-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.ph-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--navy) 0%, transparent 30%);
+  z-index: 1;
+}
+.ph-img-caption {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2;
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 1px;
+}
+
+/* ── TABS BAR ── */
+.tabs-bar {
+  background: var(--white);
+  border-bottom: 3px solid #e8eef6;
+  display: flex;
+  padding: 0 48px;
+  gap: 0;
+  position: sticky;
+  top: 72px;
+  z-index: 50;
+}
+.tab-btn {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--grey);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 18px 28px;
+  cursor: pointer;
+  margin-bottom: -3px;
+  transition: color 0.18s, border-color 0.18s;
+}
+.tab-btn:hover { color: var(--blue); }
+.tab-btn.active {
+  color: var(--navy);
+  border-bottom-color: var(--sky);
+}
+
+/* ── LEVEL SECTIONS ── */
+.level-section {
+  display: none;
+  background: var(--light);
+}
+.level-section.active { display: block; }
+
+.level-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 60px 48px;
+}
+
+.level-header {
+  margin-bottom: 44px;
+}
+.level-badge {
+  display: inline-block;
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+.badge-1 { background: var(--sky); }
+.badge-2 { background: var(--blue); }
+.badge-3 { background: var(--navy); }
+.badge-4 { background: var(--red); }
+.badge-5 { background: var(--grey); }
+
+.level-header h2 {
+  font-family: 'Ebrima', sans-serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.level-header p {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.75;
+  max-width: 680px;
+}
+
+/* ── PROJECT GRID ── */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.proj-card {
+  background: var(--white);
+  border: 1px solid #dde8f4;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.proj-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,32,95,0.12);
+}
+.proj-card--img { grid-column: span 1; }
+
+.proj-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.proj-card-icon {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #eaf2fb, #d6e8f7);
+}
+.proj-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.proj-card-body h3 {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.proj-card-body p {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.88rem;
+  color: var(--grey);
+  line-height: 1.65;
+  flex: 1;
+}
+.proj-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.proj-tag {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: rgba(0,121,184,0.1);
+  padding: 3px 10px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .ph-inner { grid-template-columns: 1fr; }
+  .ph-img-wrap { height: 260px; }
+  .ph-text { padding: 48px 24px; }
+  .tabs-bar { padding: 0 16px; overflow-x: auto; }
+  .tab-btn { padding: 14px 16px; font-size: 0.8rem; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .level-inner { padding: 40px 24px; }
 }
