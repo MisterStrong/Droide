@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réalisations – Droïde</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/image/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competitions.html">Compétitions</a></li>
+      <li><a href="realisations.html" class="active">Réalisations</a></li>
+    </ul>
+    <div class="nav-css-logo">
+      <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" />
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="ph-inner">
+      <div class="ph-text">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span>Ce qu'on a fait</span>
+        </div>
+        <h1 class="ph-title">Nos <span>Réalisations</span></h1>
+        <p class="ph-desc">Une vitrine des jeux, projets et créations des élèves du programme Droïde. Chaque réalisation représente des heures de travail, d'apprentissage et de passion.</p>
+      </div>
+      <div class="ph-img-wrap">
+        <img src="assets/image/hero_team.png" alt="Équipe Droïde" class="ph-img" />
+        <div class="ph-img-caption">Équipe Droïde en compétition — Collège Saint-Sacrement</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <div class="tabs-bar">
+    <button class="tab-btn active" onclick="showTab(this,'jeux')">🎮 Jeux d'élèves</button>
+    <button class="tab-btn" onclick="showTab(this,'galerie')">📸 Galerie photos</button>
+  </div>
+
+  <!-- ── JEUX D'ÉLÈVES ── -->
+  <section class="level-section active" id="tab-jeux">
+    <div class="level-inner">
+      <div class="level-header">
+        <h2>Jeux créés par les élèves</h2>
+        <p>Des jeux conçus, développés et testés entièrement par les élèves du programme Droïde — de Scratch aux jeux Python en passant par JavaScript.</p>
+      </div>
+
+      <div class="games-grid">
+
+        <div class="game-card">
+          <div class="game-preview game-preview--placeholder">
+            <span class="game-preview-icon">🕹️</span>
+            <span class="game-preview-label">Aperçu à venir</span>
+          </div>
+          <div class="game-info">
+            <div class="game-meta">
+              <span class="game-level badge-1">Sec 1</span>
+              <span class="game-year">2025</span>
+            </div>
+            <h3>Titre du jeu</h3>
+            <p>Description courte du jeu — genre, mécaniques, inspiration. [à remplir]</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Scratch</span>
+            </div>
+            <button class="btn-play" disabled>Bientôt disponible</button>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <div class="game-preview game-preview--placeholder">
+            <span class="game-preview-icon">🚀</span>
+            <span class="game-preview-label">Aperçu à venir</span>
+          </div>
+          <div class="game-info">
+            <div class="game-meta">
+              <span class="game-level badge-2">Sec 2</span>
+              <span class="game-year">2025</span>
+            </div>
+            <h3>Titre du jeu</h3>
+            <p>Description courte du jeu — genre, mécaniques, inspiration. [à remplir]</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">Pygame</span>
+            </div>
+            <button class="btn-play" disabled>Bientôt disponible</button>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <div class="game-preview game-preview--placeholder">
+            <span class="game-preview-icon">🎯</span>
+            <span class="game-preview-label">Aperçu à venir</span>
+          </div>
+          <div class="game-info">
+            <div class="game-meta">
+              <span class="game-level badge-3">Sec 3</span>
+              <span class="game-year">2025</span>
+            </div>
+            <h3>Titre du jeu</h3>
+            <p>Description courte du jeu — genre, mécaniques, inspiration. [à remplir]</p>
+            <div class="proj-tags">
+              <span class="proj-tag">JavaScript</span>
+            </div>
+            <button class="btn-play" disabled>Bientôt disponible</button>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <div class="game-preview game-preview--placeholder">
+            <span class="game-preview-icon">⚔️</span>
+            <span class="game-preview-label">Aperçu à venir</span>
+          </div>
+          <div class="game-info">
+            <div class="game-meta">
+              <span class="game-level badge-4">Sec 4</span>
+              <span class="game-year">2025</span>
+            </div>
+            <h3>Titre du jeu</h3>
+            <p>Description courte du jeu — genre, mécaniques, inspiration. [à remplir]</p>
+            <div class="proj-tags">
+              <span class="proj-tag">Python</span>
+              <span class="proj-tag">Pygame</span>
+            </div>
+            <button class="btn-play" disabled>Bientôt disponible</button>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <div class="game-preview game-preview--placeholder">
+            <span class="game-preview-icon">🏆</span>
+            <span class="game-preview-label">Aperçu à venir</span>
+          </div>
+          <div class="game-info">
+            <div class="game-meta">
+              <span class="game-level badge-5">Sec 5</span>
+              <span class="game-year">2025</span>
+            </div>
+            <h3>Titre du jeu</h3>
+            <p>Description courte du jeu — genre, mécaniques, inspiration. [à remplir]</p>
+            <div class="proj-tags">
+              <span class="proj-tag">JavaScript</span>
+              <span class="proj-tag">HTML</span>
+            </div>
+            <button class="btn-play" disabled>Bientôt disponible</button>
+          </div>
+        </div>
+
+        <!-- Carte "Soumettre un jeu" -->
+        <div class="game-card game-card--submit">
+          <div class="submit-inner">
+            <span class="submit-icon">＋</span>
+            <h3>Ton jeu ici ?</h3>
+            <p>Tu as créé un jeu dans le cadre du cours Droïde ? Parle-en à ton enseignant pour le faire ajouter à la vitrine !</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALERIE ── -->
+  <section class="level-section" id="tab-galerie">
+    <div class="level-inner">
+      <div class="level-header">
+        <h2>Galerie de projets</h2>
+        <p>Moments capturés lors des ateliers, compétitions et présentations du programme Droïde. [Photos à ajouter]</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gi-large">
+          <div class="gallery-ph">
+            <span>📸</span>
+            <p>Photo principale</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-ph"><span>📸</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-ph"><span>📸</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-ph"><span>📸</span></div>
+        </div>
+        <div class="gallery-item gi-wide">
+          <div class="gallery-ph">
+            <span>📸</span>
+            <p>Photo compétition</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-ph"><span>📸</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-ph"><span>📸</span></div>
+        </div>
+        <div class="gallery-item gi-wide">
+          <div class="gallery-ph">
+            <span>📸</span>
+            <p>Photo atelier</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-ph"><span>📸</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/image/logo/droideBlanc.jpg" alt="Droïde" class="footer-droide-logo" />
+        <p class="footer-brand-desc">Un programme du Collège Saint-Sacrement dédié à la robotique et à la programmation, pour les élèves de la Sec&nbsp;1 à la Sec&nbsp;5.</p>
+        <div class="footer-css-wrap">
+          <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" />
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="competitions.html">Compétitions</a>
+        <a href="realisations.html">Réalisations</a>
+      </div>
+      <div class="footer-col">
+        <h4>Réalisations</h4>
+        <a href="#" onclick="showTab(document.querySelectorAll('.tab-btn')[0],'jeux');return false;">Jeux d'élèves</a>
+        <a href="#" onclick="showTab(document.querySelectorAll('.tab-btn')[1],'galerie');return false;">Galerie photos</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Droïde – Collège Saint-Sacrement · <span class="sky">droide.ca</span></p>
+      <p>Version bêta · Terrebonne, Québec</p>
+    </div>
+  </footer>
+
+  <script>
+    function showTab(btn, id) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.level-section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + id).classList.add('active');
+      document.querySelector('.tabs-bar').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+
+</body>
+</html>
