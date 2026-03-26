@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compétitions – Droïde</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/image/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="competitions.html" class="active">Compétitions</a></li>
+      <li><a href="realisations.html">Réalisations</a></li>
+    </ul>
+    <div class="nav-css-logo">
+      <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" />
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="ph-inner">
+      <div class="ph-text">
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span>En compétition</span>
+        </div>
+        <h1 class="ph-title">Nos <span>Compétitions</span></h1>
+        <p class="ph-desc">Droïde représente le Collège Saint-Sacrement dans quatre compétitions majeures. Des mois de préparation pour performer sur la scène régionale, provinciale et nationale.</p>
+      </div>
+      <div class="ph-img-wrap">
+        <img src="assets/image/hero_team.png" alt="Équipe Droïde en compétition" class="ph-img" />
+        <div class="ph-img-caption">Équipe Droïde — Compétition VEX</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <div class="tabs-bar">
+    <button class="tab-btn active" onclick="showTab(this,'vex')">VEX Robotics</button>
+    <button class="tab-btn" onclick="showTab(this,'crc')">CRC</button>
+    <button class="tab-btn" onclick="showTab(this,'zone01')">Zone01</button>
+    <button class="tab-btn" onclick="showTab(this,'programmathon')">Programmathon</button>
+  </div>
+
+  <!-- ── VEX ── -->
+  <section class="level-section active" id="tab-vex">
+    <div class="level-inner">
+      <div class="comp-layout">
+        <div class="comp-main">
+          <div class="comp-title-row">
+            <div class="comp-logo-block comp-logo--blue">
+              <span>VEX</span>
+            </div>
+            <div>
+              <span class="level-badge badge-1">Robotique</span>
+              <h2>VEX Robotics Competition</h2>
+            </div>
+          </div>
+          <p class="comp-desc">La VEX Robotics Competition est l'une des plus grandes et des plus prestigieuses compétitions de robotique au monde, avec des participants de plus de 50 pays. Chaque année, un nouveau défi est annoncé et les équipes ont toute la saison pour concevoir, construire et programmer leur robot.</p>
+          <p class="comp-desc">Les élèves de Sec 3 et Sec 4 participent à cette compétition. Dès septembre, les équipes se forment et commencent la conception. Les qualifications régionales ont lieu en hiver, et les meilleurs se qualifient pour les championnats provinciaux et nationaux.</p>
+
+          <div class="comp-details-grid">
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🌍</span>
+              <span class="comp-detail-label">Portée</span>
+              <span class="comp-detail-val">International</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">⚙️</span>
+              <span class="comp-detail-label">Plateforme</span>
+              <span class="comp-detail-val">VEX IQ / V5</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">📅</span>
+              <span class="comp-detail-label">Saison</span>
+              <span class="comp-detail-val">Sept → Avril</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🎓</span>
+              <span class="comp-detail-label">Niveaux</span>
+              <span class="comp-detail-val">Sec 3 & Sec 4</span>
+            </div>
+          </div>
+
+          <a href="https://www.roboticseducation.org" target="_blank" class="comp-link-btn">Site officiel VEX →</a>
+        </div>
+
+        <div class="comp-side">
+          <div class="comp-side-img">
+            <img src="assets/image/image/realisations.jpg" alt="Robot VEX en action" />
+          </div>
+          <div class="comp-side-results">
+            <h4>Résultats récents</h4>
+            <div class="comp-result">
+              <span class="comp-result-year">2025</span>
+              <span class="comp-result-desc">Résultat à venir [à remplir]</span>
+            </div>
+            <div class="comp-result">
+              <span class="comp-result-year">2024</span>
+              <span class="comp-result-desc">Résultat à venir [à remplir]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CRC ── -->
+  <section class="level-section" id="tab-crc">
+    <div class="level-inner">
+      <div class="comp-layout">
+        <div class="comp-main">
+          <div class="comp-title-row">
+            <div class="comp-logo-block comp-logo--red">
+              <span>CRC</span>
+            </div>
+            <div>
+              <span class="level-badge badge-4">Robotique</span>
+              <h2>Canadian Robotics Competitions</h2>
+            </div>
+          </div>
+          <p class="comp-desc">Les Canadian Robotics Competitions (CRC) sont une compétition canadienne mettant à l'épreuve des robots sur une variété de défis d'ingénierie. Les équipes conçoivent un robot autonome capables de naviguer, d'interagir avec des objets.</p>
+          <p class="comp-desc">Cette compétition est une excellente préparation pour les élèves qui souhaitent approfondir leurs compétences en robotique.</p>
+
+          <div class="comp-details-grid">
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🍁</span>
+              <span class="comp-detail-label">Portée</span>
+              <span class="comp-detail-val">Nationale</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🤖</span>
+              <span class="comp-detail-label">Type</span>
+              <span class="comp-detail-val">Robots Pilotés</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">📅</span>
+              <span class="comp-detail-label">Période</span>
+              <span class="comp-detail-val">Hiver</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🎓</span>
+              <span class="comp-detail-label">Niveaux</span>
+              <span class="comp-detail-val">Sec 3 & Sec 4 & Sec 5</span>
+            </div>
+          </div>
+
+          <a href="https://robo-crc.ca" class="comp-link-btn">Site officiel CRC →</a>
+        </div>
+
+        <div class="comp-side">
+          <div class="comp-side-img">
+            <img src="assets/image/image/equipecrc.jpg" alt="Robot CRC" />
+          </div>
+          <div class="comp-side-results">
+            <h4>Résultats récents</h4>
+            <div class="comp-result">
+              <span class="comp-result-year">2025</span>
+              <span class="comp-result-desc">Résultat à venir [à remplir]</span>
+            </div>
+            <div class="comp-result">
+              <span class="comp-result-year">2024</span>
+              <span class="comp-result-desc">Résultat à venir [à remplir]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ZONE01 ── -->
+  <section class="level-section" id="tab-zone01">
+    <div class="level-inner">
+      <div class="comp-layout">
+        <div class="comp-main">
+          <div class="comp-title-row">
+            <div class="comp-logo-block comp-logo--navy">
+              <span>Z01</span>
+            </div>
+            <div>
+              <span class="level-badge badge-3">Programmation</span>
+              <h2>Zone01</h2>
+            </div>
+          </div>
+          <p class="comp-desc">Zone01 est une compétition de programmation québécoise où les équipes résolvent des problèmes algorithmiques sous contrainte de temps. Les participants doivent démontrer leur maîtrise de la logique, des structures de données et des algorithmes d'optimisation.</p>
+          <p class="comp-desc">C'est la compétition idéale pour les élèves passionnés de code pur. Les équipes de Sec 1 participent avec des robots Lego, tandis que les niveaux supérieurs affrontent des défis de programmation plus avancés.</p>
+
+          <div class="comp-details-grid">
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🇶🇨</span>
+              <span class="comp-detail-label">Portée</span>
+              <span class="comp-detail-val">Québec</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">💻</span>
+              <span class="comp-detail-label">Type</span>
+              <span class="comp-detail-val">Algo / Code / Robots</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">📅</span>
+              <span class="comp-detail-label">Période</span>
+              <span class="comp-detail-val">Hiver</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🎓</span>
+              <span class="comp-detail-label">Niveaux</span>
+              <span class="comp-detail-val">Sec 1 & Sec 2</span>
+            </div>
+          </div>
+
+          <a href="https://zone01.ca" class="comp-link-btn">Site officiel Zone01 →</a>
+        </div>
+
+        <div class="comp-side">
+          <div class="comp-side-img">
+            <img src="assets/planif.jpeg" alt="Élèves Zone01" />
+          </div>
+          <div class="comp-side-results">
+            <h4>Résultats récents</h4>
+            <div class="comp-result">
+              <span class="comp-result-year">2025</span>
+              <span class="comp-result-desc">Résultat à venir [à remplir]</span>
+            </div>
+            <div class="comp-result">
+              <span class="comp-result-year">2024</span>
+              <span class="comp-result-desc">Résultat à venir [à remplir]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROGRAMMATHON ── -->
+  <section class="level-section" id="tab-programmathon">
+    <div class="level-inner">
+      <div class="comp-layout">
+        <div class="comp-main">
+          <div class="comp-title-row">
+            <div class="comp-logo-block comp-logo--sky">
+              <span>PRG</span>
+            </div>
+            <div>
+              <span class="level-badge badge-2">Scratch</span>
+              <h2>Programmathon</h2>
+            </div>
+          </div>
+          <p class="comp-desc">Le Programmathon est un marathon de programmation en équipe : concevoir et développer un jeu en quelques heures seulement. Créativité, vitesse et travail d'équipe sont les clés du succès.</p>
+          <p class="comp-desc">Les équipes partent d'une feuille blanche et doivent livrer un jeu sur Scratch dans le temps imparti.</p>
+
+          <div class="comp-details-grid">
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🇶🇨</span>
+              <span class="comp-detail-label">Portée</span>
+              <span class="comp-detail-val">Collège Saint-Sacrement</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">⏱️</span>
+              <span class="comp-detail-label">Format</span>
+              <span class="comp-detail-val">Marathon 1 journée</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">📅</span>
+              <span class="comp-detail-label">Période</span>
+              <span class="comp-detail-val">Variable</span>
+            </div>
+            <div class="comp-detail-card">
+              <span class="comp-detail-icon">🎓</span>
+              <span class="comp-detail-label">Niveaux</span>
+              <span class="comp-detail-val">Sec 1 & Sec 2</span>
+            </div>
+          </div>
+
+          <a href="#" class="comp-link-btn">En savoir plus →</a>
+        </div>
+
+        <div class="comp-side">
+          <div class="comp-side-img">
+            <img src="assets/planif.jpeg" alt="Programmathon" />
+          </div>
+          <div class="comp-side-results">
+            <h4>Résultats récents</h4>
+            <div class="comp-result">
+              <span class="comp-result-year">2025</span>
+              <span class="comp-result-desc">Résultat à venir [à remplir]</span>
+            </div>
+            <div class="comp-result">
+              <span class="comp-result-year">2024</span>
+              <span class="comp-result-desc">Résultat à venir [à remplir]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/image/logo/droideCercle.png" alt="Droïde" class="footer-droide-logo" />
+        <p class="footer-brand-desc">Un programme du Collège Saint-Sacrement dédié à la robotique et à la programmation, pour les élèves de la Sec&nbsp;1 à la Sec&nbsp;5.</p>
+        <div class="footer-css-wrap">
+          <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" />
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="competitions.html">Compétitions</a>
+        <a href="realisations.html">Réalisations</a>
+      </div>
+      <div class="footer-col">
+        <h4>Compétitions</h4>
+        <a href="#" onclick="showTab(document.querySelectorAll('.tab-btn')[0],'vex');return false;">VEX Robotics</a>
+        <a href="#" onclick="showTab(document.querySelectorAll('.tab-btn')[1],'crc');return false;">Canadian Robot Games</a>
+        <a href="#" onclick="showTab(document.querySelectorAll('.tab-btn')[2],'zone01');return false;">Zone01</a>
+        <a href="#" onclick="showTab(document.querySelectorAll('.tab-btn')[3],'programmathon');return false;">Programmathon</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Droïde – Collège Saint-Sacrement · <span class="sky">droide.ca</span></p>
+      <p>Version bêta · Terrebonne, Québec</p>
+    </div>
+  </footer>
+
+  <script>
+    function showTab(btn, id) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.level-section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + id).classList.add('active');
+      document.querySelector('.tabs-bar').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  </script>
+
+</body>
+</html>
