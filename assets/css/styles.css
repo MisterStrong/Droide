@@ -459,22 +459,21 @@ body {
   max-width: 440px;
 }
 .ph-img-wrap { position: relative; overflow: hidden; }
-.ph-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 .ph-img-wrap::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, var(--navy) 0%, transparent 30%);
   z-index: 1;
-}
-.ph-img-caption {
-  position: absolute;
-  bottom: 16px; right: 16px;
-  z-index: 2;
-  font-family: 'Ebrima', sans-serif;
-  font-size: 0.68rem;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 1px;
 }
 
 /* ── TABS BAR ── */
