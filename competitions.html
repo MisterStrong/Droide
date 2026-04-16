@@ -344,7 +344,26 @@
       document.getElementById('tab-' + id).classList.add('active');
       document.querySelector('.tabs-bar').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+    
   </script>
+  <script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+
+      if (top < windowHeight - 100) {
+        el.classList.add('visible');
+      }
+   });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
 
 </body>
 </html>
