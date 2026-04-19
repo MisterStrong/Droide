@@ -35,49 +35,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 80);
   }
 
-  /* ── STATS COUNTER ANIMATION ── */
-  const statNumbers = document.querySelectorAll('.stat-n');
-  const statsSection = document.querySelector('.stats');
+// Compteur animé sur les stats
+const stats = document.querySelector('.stats');
+if (stats) {
+  new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
 
-  const animateCounter = (el) => {
-    const target = el.textContent.trim();
-    if (target === '∞') return;
-    const num = parseInt(target, 10);
-    if (isNaN(num)) return;
-    let start = 0;
-    const duration = 1000;
-    const step = duration / num;
-    const timer = setInterval(() => {
-      start += 1;
-      el.textContent = start;
-      if (start >= num) {
-        el.textContent = num;
-        clearInterval(timer);
-      }
-    }, step);
-  };
+    document.querySelectorAll('.stat-n').forEach((el, i) => {
+      setTimeout(() => {
+        const target = el.textContent.trim();
+        const num = parseInt(target);
+        let count = 0;
 
-  if (statsSection) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          statNumbers.forEach((el, i) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(16px)';
-            el.style.transition = `opacity 0.5s ${i * 0.1}s ease, transform 0.5s ${i * 0.1}s ease`;
-            setTimeout(() => {
-              el.style.opacity = '1';
-              el.style.transform = 'translateY(0)';
-              animateCounter(el);
-            }, i * 100);
-          });
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    observer.observe(statsSection);
-  }
+        const timer = setInterval(() => {
+          count++;
+          el.textContent = isNaN(num) ? count : count;
+          if (count >= (isNaN(num) ? 99 : num)) {
+            clearInterval(timer);
+            el.textContent = target; 
+          }
+        }, isNaN(num) ? 10 : 1000 / num);
 
+      }, i * 100);
+    });
+
+    stats.unobserve?.(); // stop observer
+  }, { threshold: 0.4 }).observe(stats);
+}
   /* ── ABOUT CARDS SCROLL REVEAL ── */
   const aboutCards = document.querySelectorAll('.about-card');
   if (aboutCards.length) {
