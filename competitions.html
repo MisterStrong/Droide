@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Compétitions – Droïde</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/competitions-anim.css" />
 </head>
 <body>
 
@@ -26,13 +27,14 @@
 
   <!-- PAGE HERO -->
   <section class="page-hero">
+    <canvas id="comp-canvas" aria-hidden="true"></canvas>
     <div class="ph-inner">
       <div class="ph-text">
         <div class="section-label">
           <div class="section-label-line"></div>
           <span>En compétition</span>
         </div>
-        <h1 class="ph-title">Nos <span>Compétitions</span></h1>
+        <h1 class="ph-title">Nos <span class="accent-flicker">Compétitions</span></h1>
         <p class="ph-desc">Droïde représente le Collège Saint-Sacrement dans quatre compétitions majeures. Des mois de préparation pour performer sur la scène régionale, provinciale et nationale.</p>
       </div>
       <div class="ph-img-wrap">
@@ -55,7 +57,7 @@
       <div class="comp-layout">
         <div class="comp-main">
           <div class="comp-title-row">
-            <div class="comp-logo-block comp-logo--blue">
+            <div class="comp-logo-block comp-logo--blue" data-text="VEX">
               <span>VEX</span>
             </div>
             <div>
@@ -118,7 +120,7 @@
       <div class="comp-layout">
         <div class="comp-main">
           <div class="comp-title-row">
-            <div class="comp-logo-block comp-logo--red">
+            <div class="comp-logo-block comp-logo--red" data-text="CRC">
               <span>CRC</span>
             </div>
             <div>
@@ -185,7 +187,7 @@
       <div class="comp-layout">
         <div class="comp-main">
           <div class="comp-title-row">
-            <div class="comp-logo-block comp-logo--navy">
+            <div class="comp-logo-block comp-logo--navy" data-text="Z01">
               <span>Z01</span>
             </div>
             <div>
@@ -248,7 +250,7 @@
       <div class="comp-layout">
         <div class="comp-main">
           <div class="comp-title-row">
-            <div class="comp-logo-block comp-logo--sky">
+            <div class="comp-logo-block comp-logo--sky" data-text="PRG">
               <span>PRG</span>
             </div>
             <div>
@@ -339,12 +341,42 @@
   <script>
     function showTab(btn, id) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.level-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.level-section').forEach(s => {
+        s.classList.remove('active', 'section-enter');
+      });
       btn.classList.add('active');
-      document.getElementById('tab-' + id).classList.add('active');
+      const section = document.getElementById('tab-' + id);
+      section.classList.add('active');
+
+      // Trigger slide-in animation
+      void section.offsetWidth;
+      section.classList.add('section-enter');
+
       document.querySelector('.tabs-bar').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Spring-pop detail cards
+      section.querySelectorAll('.comp-detail-card').forEach((card, i) => {
+        card.classList.remove('card-animate');
+        void card.offsetWidth;
+        card.style.animationDelay = (i * 0.1) + 's';
+        card.classList.add('card-animate');
+      });
+
+      // Re-animate result items
+      section.querySelectorAll('.comp-result').forEach((el, i) => {
+        el.style.animation = 'none';
+        void el.offsetWidth;
+        el.style.animation = '';
+        el.style.animationDelay = (i * 0.12) + 's';
+      });
+
+      // Badge pop
+      section.querySelectorAll('.level-badge').forEach(badge => {
+        badge.classList.remove('badge-pop');
+        void badge.offsetWidth;
+        badge.classList.add('badge-pop');
+      });
     }
-    
   </script>
   <script>
   const reveals = document.querySelectorAll('.reveal');
@@ -364,6 +396,85 @@
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
 </script>
+
+  <!-- PARTICLE NETWORK CANVAS -->
+  <script>
+  (function () {
+    const canvas = document.getElementById('comp-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const COUNT    = 45;
+    const MAX_DIST = 130;
+    const SKY      = '1,173,240';
+    const WHITE    = '255,255,255';
+
+    const particles = Array.from({ length: COUNT }, () => ({
+      x:     Math.random() * canvas.width,
+      y:     Math.random() * canvas.height,
+      vx:    (Math.random() - 0.5) * 0.45,
+      vy:    (Math.random() - 0.5) * 0.45,
+      r:     1.5 + Math.random() * 1.8,
+      phase: Math.random() * Math.PI * 2,
+    }));
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Move
+      particles.forEach(p => {
+        p.x     += p.vx;
+        p.y     += p.vy;
+        p.phase += 0.018;
+        if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      });
+
+      // Lines
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx   = particles[i].x - particles[j].x;
+          const dy   = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < MAX_DIST) {
+            const alpha = (1 - dist / MAX_DIST) * 0.28;
+            ctx.strokeStyle = `rgba(${SKY},${alpha})`;
+            ctx.lineWidth   = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Dots
+      particles.forEach(p => {
+        const r     = p.r + Math.sin(p.phase) * 0.6;
+        const alpha = 0.45 + Math.sin(p.phase) * 0.22;
+        const color = Math.sin(p.phase) > 0.5 ? WHITE : SKY;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${color},${alpha})`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    // Respect prefers-reduced-motion
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      draw();
+    }
+  })();
+  </script>
 
 </body>
 </html>
