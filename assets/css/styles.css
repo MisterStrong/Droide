@@ -837,6 +837,33 @@ body {
   font-size: 0.85rem;
   color: var(--grey);
 }
+/* Base state */
+body {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* When page is ready */
+body.page-enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Before leaving page */
+body.page-exit {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
 
 /* ── RESPONSIVE COMPÉTITIONS ── */
 @media (max-width: 900px) {

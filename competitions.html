@@ -11,7 +11,7 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <a class="nav-brand" href="index.html">
-      <img src="assets/image/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" />
+      <img src="assets/img/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" />
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -20,7 +20,7 @@
       <li><a href="realisations.html">Réalisations</a></li>
     </ul>
     <div class="nav-css-logo">
-      <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" />
+      <img src="assets/img/logo/cssBlanc.png" alt="Collège Saint-Sacrement" />
     </div>
   </nav>
 
@@ -157,7 +157,7 @@
 
         <div class="comp-side">
           <div class="comp-side-img">
-            <img src="assets/image/image/equipecrc.jpg" alt="Robot CRC" />
+            <img src="assets/img/image/equipecrc.jpg" alt="Robot CRC" />
           </div>
           <div class="comp-side-results">
             <h4>Résultats récents</h4>
@@ -224,7 +224,7 @@
 
         <div class="comp-side">
           <div class="comp-side-img">
-            <img src="assets/image/image/zone01.jpg" alt="Élèves Zone01" />
+            <img src="assets/img/image/zone01.jpg" alt="Élèves Zone01" />
           </div>
           <div class="comp-side-results">
             <h4>Résultats récents</h4>
@@ -287,7 +287,7 @@
 
         <div class="comp-side">
           <div class="comp-side-img">
-            <img src="assets/image/image/Banner2026.png" alt="Programmathon" />
+            <img src="assets/img/image/Banner2026.png" alt="Programmathon" />
           </div>
           <div class="comp-side-results">
             <h4>Résultats récents</h4>
@@ -309,10 +309,10 @@
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="assets/image/logo/droideCercle.png" alt="Droïde" class="footer-droide-logo" />
+        <img src="assets/img/logo/droideCercle.png" alt="Droïde" class="footer-droide-logo" />
         <p class="footer-brand-desc">Un programme du Collège Saint-Sacrement dédié à la robotique et à la programmation, pour les élèves de la Sec&nbsp;1 à la Sec&nbsp;5.</p>
         <div class="footer-css-wrap">
-          <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" />
+          <img src="assets/img/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" />
         </div>
       </div>
       <div class="footer-col">
@@ -363,6 +363,34 @@
 
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
+</script>
+<script>
+  // Animate in on load
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('page-enter');
+  });
+
+  // Animate out on internal link click
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const url = new URL(link.href, location.href);
+    const isSamePage = url.href === location.href;
+    const isInternal = url.origin === location.origin;
+    const isNewTab = link.target === '_blank' || e.metaKey || e.ctrlKey;
+    const isDownload = link.hasAttribute('download');
+
+    if (!isInternal || isSamePage || isNewTab || isDownload) return;
+
+    e.preventDefault();
+    document.body.classList.remove('page-enter');
+    document.body.classList.add('page-exit');
+
+    setTimeout(() => {
+      window.location.href = url.href;
+    }, 350);
+  });
 </script>
 
 </body>

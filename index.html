@@ -11,7 +11,7 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <a class="nav-brand" href="#">
-      <img src="assets/image/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" />
+      <img src="assets/img/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" />
     </a>
 
     <ul class="nav-links">
@@ -22,14 +22,14 @@
     </ul>
 
     <div class="nav-css-logo">
-      <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" />
+      <img src="assets/img/logo/cssBlanc.png" alt="Collège Saint-Sacrement" />
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-visual">
-      <img src="assets/image/image/accueil.png" alt="Droïde" />
+      <img src="assets/img/image/accueil.png" alt="Droïde" />
     </div>
 
     <div class="hero-text">
@@ -54,7 +54,7 @@
 
     <!-- Badge bas-gauche du hero -->
     <div class="hero-badge">
-      <img src="assets/image/logo/droideCercle.png" alt="Droïde" class="badge-droide-logo" />
+      <img src="assets/img/logo/droideCercle.png" alt="Droïde" class="badge-droide-logo" />
       <span>Collège Saint-Sacrement · Terrebonne</span>
     </div>
   </section>
@@ -137,7 +137,7 @@
           programmation, pour les élèves de la Sec&nbsp;1 à la Sec&nbsp;5.
         </p>
         <div class="footer-css-wrap">
-          <img src="assets/image/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" />
+          <img src="assets/img/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" />
         </div>
       </div>
 
@@ -166,6 +166,34 @@
 
   <!-- ANIMATIONS -->
   <script src="assets/js/accueil.js"></script>
+  <script>
+  // Animate in on load
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('page-enter');
+  });
+
+  // Animate out on internal link click
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const url = new URL(link.href, location.href);
+    const isSamePage = url.href === location.href;
+    const isInternal = url.origin === location.origin;
+    const isNewTab = link.target === '_blank' || e.metaKey || e.ctrlKey;
+    const isDownload = link.hasAttribute('download');
+
+    if (!isInternal || isSamePage || isNewTab || isDownload) return;
+
+    e.preventDefault();
+    document.body.classList.remove('page-enter');
+    document.body.classList.add('page-exit');
+
+    setTimeout(() => {
+      window.location.href = url.href;
+    }, 350);
+  });
+</script>
 
 </body>
 </html>
