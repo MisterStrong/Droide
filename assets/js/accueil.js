@@ -194,15 +194,15 @@ if (stats) {
   });
 
   /* Ripple keyframe */
-  if (!document.getElementById('ripple-style')) {
-    const style = document.createElement('style');
-    style.id = 'ripple-style';
-    style.textContent = `
-      @keyframes ripple {
-        to { transform: scale(30); opacity: 0; }
-      }
-    `;
-    document.head.appendChild(style);
-  }
+ // if (!document.getElementById('ripple-style')) {
+    //const style = document.createElement('style');
+    //style.id = 'ripple-style';
+    //style.textContent = `
+     // @keyframes ripple {
+        //to { transform: scale(30); opacity: 0; }
+      //}
+    //`;
+    d//ocument.head.appendChild(style);
+  //}
 
 });

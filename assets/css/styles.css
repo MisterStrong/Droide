@@ -9,7 +9,13 @@
    Typographie : Ebrima (recommandée officiellement)
 ================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Ebrima&display=swap');
+@font-face {
+  font-family: 'Ebrima';
+  src: url('../Fonts/ebrima.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap
+}
 
 :root {
   --navy:  #00205f;
@@ -606,7 +612,7 @@ body.page-exit {
   display: flex; flex-direction: column;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.proj-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,32,95,0.12); }
+/*.proj-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,32,95,0.12); }*/
 .proj-card-img { width: 100%; height: 220px; object-fit: cover; display: block; }
 .proj-card-icon {
   height: 120px;
@@ -633,6 +639,21 @@ body.page-exit {
   background: rgba(0,121,184,0.1);
   padding: 3px 10px;
 }
+.proj-link {
+  font-family: 'Ebrima', sans-serif;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--white);
+  background: var(--blue);
+  text-decoration: none;
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 7px 16px;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: background 0.2s, gap 0.15s;
+}
+.proj-link::after { content: '→'; }
+.proj-link:hover { background: var(--navy); gap: 12px; }
 
 /* ── JEUX D'ÉLÈVES ── */
 .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -642,7 +663,7 @@ body.page-exit {
   display: flex; flex-direction: column;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.game-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,32,95,0.12); }
+/*.game-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,32,95,0.12); }*/
 .game-preview {
   height: 180px;
   display: flex; flex-direction: column;
@@ -764,10 +785,10 @@ body.page-exit {
   border-radius: 4px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.comp-logo-block:hover {
+/*.comp-logo-block:hover {
   transform: rotate(-3deg) scale(1.05);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+}*/
 .comp-logo-block span {
   font-family: 'Ebrima', sans-serif;
   font-size: 1.4rem;
@@ -812,10 +833,10 @@ body.page-exit {
   gap: 6px;
   transition: all 0.35s ease;
 }
-.comp-detail-card:hover {
+/*.comp-detail-card:hover {
   transform: translateY(-10px) scale(1.04);
   box-shadow: 0 20px 50px rgba(0,32,95,0.15);
-}
+}*/
 .comp-detail-icon { font-size: 1.6rem; }
 .comp-detail-label {
   font-family: 'Ebrima', sans-serif;
