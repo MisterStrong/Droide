@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --max-old-space-size=8192 convert_wat_to_wasm.js)",
+      "Bash(npm install *)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

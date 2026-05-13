@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cavern Crawlers – Droïde 2024</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d1e42;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      padding: 14px 24px;
+      background: #00205f;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    header a {
+      color: #01adf0;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    header a:hover { color: #fff; }
+
+    header h1 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      flex: 1;
+      text-align: center;
+    }
+
+    header .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: #01adf0;
+      color: #fff;
+      padding: 3px 10px;
+    }
+
+    #game-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 24px;
+      gap: 16px;
+    }
+
+    #unity-canvas {
+      width: 960px;
+      height: 600px;
+      max-width: 100%;
+      aspect-ratio: 16/10;
+      background: #000;
+      display: block;
+    }
+
+    #loading-bar-wrap {
+      width: 960px;
+      max-width: 100%;
+    }
+
+    #loading-label {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8aa4bc;
+      margin-bottom: 8px;
+    }
+
+    #loading-bar {
+      height: 4px;
+      background: #1a3a6b;
+      width: 100%;
+    }
+
+    #loading-fill {
+      height: 100%;
+      background: #01adf0;
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    footer {
+      padding: 12px;
+      font-size: 0.72rem;
+      color: #4a6a8a;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../../realisations.html">← Retour</a>
+    <h1>Cavern Crawlers</h1>
+    <span class="badge">2024</span>
+  </header>
+
+  <div id="game-wrap">
+    <div id="loading-bar-wrap">
+      <p id="loading-label">Chargement…</p>
+      <div id="loading-bar"><div id="loading-fill"></div></div>
+    </div>
+    <canvas id="unity-canvas"></canvas>
+  </div>
+
+  <footer>Droïde – Collège Saint-Sacrement · Cavern Crawlers — Projet intégrateur Sec&nbsp;5, 2024</footer>
+
+  <script src="Build/Final_4_NONE.loader.js"></script>
+  <script>
+    const canvas = document.querySelector('#unity-canvas');
+    const fill   = document.querySelector('#loading-fill');
+    const label  = document.querySelector('#loading-label');
+    const wrap   = document.querySelector('#loading-bar-wrap');
+
+    createUnityInstance(canvas, {
+      dataUrl:             'Build/Final_4_NONE.data',
+      frameworkUrl:        'Build/Final_4_NONE.framework.js',
+      codeUrl:             'Build/Final_4_NONE.wasm',
+      streamingAssetsUrl:  'StreamingAssets',
+      companyName:         'Droïde CSS',
+      productName:         'Jeu Sec 4',
+      productVersion:      '1.0',
+    }, (progress) => {
+      fill.style.width = (progress * 100) + '%';
+    }).then(() => {
+      wrap.style.display = 'none';
+    }).catch((msg) => {
+      label.textContent = 'Erreur de chargement : ' + msg;
+    });
+  </script>
+
+</body>
+</html>

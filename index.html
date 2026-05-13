@@ -13,6 +13,7 @@
   <meta property="og:title" content="Droïde – Collège Saint-Sacrement" />
   <meta property="og:description" content="Club de robotique et de programmation du Collège Saint-Sacrement à Terrebonne. Compétitions VEX, CRC, Zone01 et Programmathon." />
   <title>Droïde – Collège Saint-Sacrement</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png" />
   <link rel="preload" href="assets/Fonts/ebrima.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -176,34 +177,7 @@
 
   <!-- ANIMATIONS -->
   <script src="assets/js/accueil.js"></script>
-  <script>
-  // Animate in on load
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('page-enter');
-  });
-
-  // Animate out on internal link click
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-
-    const url = new URL(link.href, location.href);
-    const isSamePage = url.href === location.href;
-    const isInternal = url.origin === location.origin;
-    const isNewTab = link.target === '_blank' || e.metaKey || e.ctrlKey;
-    const isDownload = link.hasAttribute('download');
-
-    if (!isInternal || isSamePage || isNewTab || isDownload) return;
-
-    e.preventDefault();
-    document.body.classList.remove('page-enter');
-    document.body.classList.add('page-exit');
-
-    setTimeout(() => {
-      window.location.href = url.href;
-    }, 350);
-  });
-</script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
