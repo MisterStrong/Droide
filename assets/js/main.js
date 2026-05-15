@@ -46,3 +46,16 @@ function showLevel(btn, id) {
   document.getElementById('level-' + id).classList.add('active');
   document.querySelector('.tabs-bar').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+/* ── GALLERY YEAR FILTER ── */
+function filterGalleryYear(year) {
+  let visible = 0;
+  document.querySelectorAll('.gallery-grid .gallery-item').forEach(item => {
+    const match = year === 'all' || item.dataset.year === year;
+    item.classList.toggle('is-hidden', !match);
+    if (match) visible++;
+  });
+
+  const empty = document.getElementById('galleryEmpty');
+  if (empty) empty.hidden = visible !== 0;
+}

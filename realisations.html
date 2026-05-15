@@ -15,14 +15,17 @@
   <title>Réalisations – Droïde</title>
   <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png" />
   <link rel="preload" href="assets/Fonts/ebrima.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" as="image" href="assets/img/image/equipecrc.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/lightbox.js" defer></script>
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <a class="nav-brand" href="index.html">
-      <img src="assets/img/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" />
+      <img src="assets/img/logo/droideCercle.png" alt="Droïde" class="nav-droide-logo" width="48" height="48" decoding="async" />
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Accueil</a></li>
@@ -31,7 +34,7 @@
       <li><a href="realisations.html" class="active">Réalisations</a></li>
     </ul>
     <div class="nav-css-logo">
-      <img src="assets/img/logo/cssBlanc.png" alt="Collège Saint-Sacrement" />
+      <img src="assets/img/logo/cssBlanc.png" alt="Collège Saint-Sacrement" width="120" height="40" decoding="async" />
     </div>
   </nav>
 
@@ -47,7 +50,7 @@
         <p class="ph-desc">Une vitrine des jeux, projets et créations des élèves du programme de robotique. Chaque réalisation représente des heures de travail, d'apprentissage et de passion.</p>
       </div>
       <div class="ph-img-wrap">
-        <img src="assets/img/image/equipecrc.jpg" alt="Équipe Droïde" class="ph-img" fetchpriority="high" decoding="async" />
+        <img src="assets/img/image/equipecrc.jpg" alt="Équipe Droïde" class="ph-img" width="1200" height="800" fetchpriority="high" decoding="async" />
         <div class="ph-img-caption">Équipe Droïde en compétition — Collège Saint-Sacrement</div>
       </div>
     </div>
@@ -71,7 +74,7 @@
 
         <div class="game-card">
           <div class="game-preview">
-            <img src="assets/img/image/cavern.png" alt="Cavern Crawlers" class="game-preview-img" loading="lazy" decoding="async" />
+            <img src="assets/img/image/cavern.png" alt="Cavern Crawlers" class="game-preview-img" width="800" height="450" loading="lazy" decoding="async" />
           </div>
           <div class="game-info">
             <div class="game-meta">
@@ -101,7 +104,7 @@
 
         <div class="game-card">
           <div class="game-preview">
-            <img src="assets/jeux2024/img/splashMI.png" alt="Moving In" class="game-preview-img" loading="lazy" decoding="async" />
+            <img src="assets/jeux2024/img/splashMI.png" alt="Moving In" class="game-preview-img" width="800" height="450" loading="lazy" decoding="async" />
           </div>
           <div class="game-info">
             <div class="game-meta">
@@ -143,43 +146,99 @@
     <div class="level-inner">
       <div class="level-header">
         <h2>Galerie de projets</h2>
-        <p>Moments capturés lors des ateliers, compétitions et présentations du programme de robotique. [Photos à ajouter]</p>
+        <p>Moments capturés lors des ateliers, compétitions et présentations du programme de robotique. </p>
+      </div>
+
+      <!-- Filtre par année -->
+      <div class="year-filter">
+        <div class="year-filter-label">
+          <div class="year-filter-line"></div>
+          <label for="yearSelect">Filtrer par année</label>
+        </div>
+        <div class="year-select-wrap">
+          <select id="yearSelect" class="year-select" onchange="filterGalleryYear(this.value)">
+            <option value="all">Toutes les années</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <!-- Pour ajouter une année, copier la ligne ci-dessus avec value="2027" -->
+          </select>
+          <span class="year-select-arrow" aria-hidden="true">▾</span>
+        </div>
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item gi-large">
-          <img src="assets/img/image/crc1.jpg" alt="Compétition CRC" class="gallery-img" loading="lazy" decoding="async" />
+
+        <!-- 2026 -->
+        <div class="gallery-item gi-large" data-year="2026">
+          <img src="assets/img/image/2026/crc1.jpg" alt="Compétition CRC 2026" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
-        <div class="gallery-item">
-          <img src="assets/img/image/crc2.jpg" alt="Compétition CRC" class="gallery-img" loading="lazy" decoding="async" />
+        <div class="gallery-item" data-year="2026">
+          <img src="assets/img/image/2026/crc2.jpg" alt="Compétition CRC 2026" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
-        <div class="gallery-item">
-          <img src="assets/img/image/crc3.jpg" alt="Compétition CRC" class="gallery-img" loading="lazy" decoding="async" />
+        <div class="gallery-item" data-year="2026">
+          <img src="assets/img/image/2026/crc3.jpg" alt="Compétition CRC 2026" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
-        <div class="gallery-item">
-          <img src="assets/img/image/crc4.jpg" alt="Compétition CRC" class="gallery-img" loading="lazy" decoding="async" />
+        <div class="gallery-item" data-year="2026">
+          <img src="assets/img/image/2026/crc4.jpg" alt="Compétition CRC 2026" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
-        <div class="gallery-item gi-wide">
-          <div class="gallery-ph">
-            <span>📸</span>
-            <p>Photo compétition</p>
-          </div>
+
+        <!-- 2025 -->
+        <div class="gallery-item gi-large" data-year="2025">
+          <img src="assets/img/image/2025/crc1.jpg" alt="Compétition CRC 2025" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
-        <div class="gallery-item">
-          <div class="gallery-ph"><span>📸</span></div>
+        <div class="gallery-item" data-year="2025">
+          <img src="assets/img/image/2025/crc2.jpg" alt="Compétition CRC 2025" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
-        <div class="gallery-item">
-          <div class="gallery-ph"><span>📸</span></div>
+        <div class="gallery-item" data-year="2025">
+          <img src="assets/img/image/2025/crc3.jpg" alt="Compétition CRC 2025" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
-        <div class="gallery-item gi-wide">
-          <div class="gallery-ph">
-            <span>📸</span>
-            <p>Photo atelier</p>
-          </div>
+        <div class="gallery-item" data-year="2025">
+          <img src="assets/img/image/2025/crc4.jpg" alt="Compétition CRC 2025" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
-        <div class="gallery-item">
-          <div class="gallery-ph"><span>📸</span></div>
+        <div class="gallery-item gi-wide" data-year="2025">
+          <img src="assets/img/image/2025/planeur1.png" alt="Projet planeur 2025" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
         </div>
+        <div class="gallery-item" data-year="2025">
+          <img src="assets/img/image/2025/crc5.jpg" alt="Compétition CRC 2025" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item" data-year="2025">
+          <img src="assets/img/image/2025/planeur2.png" alt="Projet planeur 2025" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+
+        <!-- 2024 -->
+        <div class="gallery-item gi-large" data-year="2024">
+          <img src="assets/img/image/2024/vex1.png" alt="Compétition VEX 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item" data-year="2024">
+          <img src="assets/img/image/2024/crc1.jpg" alt="Compétition CRC 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item" data-year="2024">
+          <img src="assets/img/image/2024/crc2.jpg" alt="Compétition CRC 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item" data-year="2024">
+          <img src="assets/img/image/2024/crc3.jpg" alt="Compétition CRC 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item gi-wide" data-year="2024">
+          <img src="assets/img/image/2024/vex2.png" alt="Compétition VEX 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item" data-year="2024">
+          <img src="assets/img/image/2024/vex3.png" alt="Compétition VEX 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item" data-year="2024">
+          <img src="assets/img/image/2024/vex5.png" alt="Compétition VEX 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item gi-wide" data-year="2024">
+          <img src="assets/img/image/2024/vex6.png" alt="Compétition VEX 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+        <div class="gallery-item" data-year="2024">
+          <img src="assets/img/image/2024/vex7.png" alt="Compétition VEX 2024" class="gallery-img" width="600" height="400" loading="lazy" decoding="async" fetchpriority="low" />
+        </div>
+
+      </div>
+
+      <div class="gallery-empty" id="galleryEmpty" hidden>
+        <p>Aucune photo pour cette année pour l'instant.</p>
       </div>
 
     </div>
@@ -195,10 +254,10 @@
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="assets/img/logo/droideBlanc.jpg" alt="Droïde" class="footer-droide-logo" />
+        <img src="assets/img/logo/droideBlanc.jpg" alt="Droïde" class="footer-droide-logo" width="180" height="60" loading="lazy" decoding="async" />
         <p class="footer-brand-desc">Un programme du Collège Saint-Sacrement dédié à la robotique et à la programmation, pour les élèves de la Sec&nbsp;1 à la Sec&nbsp;5.</p>
         <div class="footer-css-wrap">
-          <img src="assets/img/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" />
+          <img src="assets/img/logo/cssBlanc.png" alt="Collège Saint-Sacrement" class="footer-css-logo" width="160" height="50" loading="lazy" decoding="async" />
         </div>
       </div>
       <div class="footer-col">
@@ -216,13 +275,8 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 Droïde – Collège Saint-Sacrement · <span class="sky">droide.ca</span></p>
-      <p>Version bêta · Terrebonne, Québec</p>
+      <p>Terrebonne, Québec</p>
     </div>
   </footer>
-
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/lightbox.js"></script>
-
-
 </body>
 </html>
